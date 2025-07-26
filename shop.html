@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Depilasik Store - Shop</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="cart.js" defer></script>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="shop.html" class="active">Shop</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="cart.html" class="cart-link">Cart (<span id="cart-count">0</span>)</a>
+  </nav>
+  <header>
+    <h1>Shop</h1>
+    <p>Browse our collection of premium products.</p>
+  </header>
+  <main>
+    <section>
+      <h2>Our Products</h2>
+      <div class="products">
+        <div class="product-card">
+          <h3>Product 1</h3>
+          <p>Short description of product 1.</p>
+          <span class="price">$49.99</span>
+          <button class="add-to-cart" data-id="1" data-name="Product 1" data-price="49.99">Add to Cart</button>
+        </div>
+        <div class="product-card">
+          <h3>Product 2</h3>
+          <p>Short description of product 2.</p>
+          <span class="price">$29.99</span>
+          <button class="add-to-cart" data-id="2" data-name="Product 2" data-price="29.99">Add to Cart</button>
+        </div>
+        <!-- Add more product cards as needed -->
+      </div>
+    </section>
+  </main>
+  <footer>
+    &copy; 2025 Depilasik Store. All rights reserved.
+  </footer>
+</body>
+</html>
