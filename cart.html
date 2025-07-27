@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Depilasik Store - Cart</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="cart.js" defer></script>
+</head>
+<body>
+  <nav>
+    <div class="logo">Depilasik</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="cart.html" class="active cart-link">
+        <span class="cart-icon">&#128722;</span>
+        Cart (<span id="cart-count">0</span>)
+      </a>
+    </div>
+  </nav>
+  <header>
+    <h1>Your Cart</h1>
+    <p>Review your selected items. Ready to shine?</p>
+  </header>
+  <main>
+    <section class="cart-section">
+      <div class="cart-card">
+        <h2><span class="cart-icon">&#128722;</span> Items in Cart</h2>
+        <div id="cart-items"></div>
+        <div id="cart-total"></div>
+        <div class="cart-btn-group">
+          <button id="checkout-btn">Checkout</button>
+          <button id="back-shopping-btn" onclick="window.location.href='shop.html'">← Back to Shopping</button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    &copy; 2025 Depilasik Store. All rights reserved.
+  </footer>
+</body>
+</html>
