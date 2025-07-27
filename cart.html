@@ -1,46 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>Depilasik Store - Cart</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <script src="cart.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="View and manage your shopping cart at Depilasik.">
+    <meta name="author" content="Depilasikusa">
+    <title>Shopping Cart | Depilasik</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Improved font loading performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <nav>
-    <div class="logo">Depilasik</div>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="shop.html">Shop</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-      <a href="cart.html" class="active cart-link">
-        <span class="cart-icon">&#128722;</span>
-        Cart (<span id="cart-count">0</span>)
-      </a>
-    </div>
-  </nav>
-  <header>
-    <h1>Your Cart</h1>
-    <p>Review your selected items. Ready to shine?</p>
-  </header>
-  <main>
-    <section class="cart-section">
-      <div class="cart-card">
-        <h2><span class="cart-icon">&#128722;</span> Items in Cart</h2>
-        <div id="cart-items"></div>
-        <div id="cart-total"></div>
-        <div class="cart-btn-group">
-          <button id="checkout-btn">Checkout</button>
-          <button id="back-shopping-btn" onclick="window.location.href='shop.html'">← Back to Shopping</button>
-        </div>
-      </div>
-    </section>
-  </main>
-  <footer>
-    &copy; 2025 Depilasik Store. All rights reserved.
-  </footer>
+    <header>
+        <nav aria-label="Main navigation">
+            <a href="index.html" class="logo" title="Depilasik Home">Depilasik</a>
+            <ul class="nav-links">
+                <li><a href="products.html" title="Browse Products">Products</a></li>
+                <li><a href="about.html" title="About Us">About</a></li>
+                <li><a href="contact.html" title="Contact Us">Contact</a></li>
+                <li><a href="cart.html" aria-current="page" title="View Cart">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="cart-section">
+            <h1>Your Shopping Cart</h1>
+            <div id="cart-items" aria-live="polite">
+                <!-- Example cart item; in production, populate dynamically via JS -->
+                <article class="cart-item" tabindex="0" aria-label="Cart item: Aloe Vera Gel">
+                    <img src="images/aloe-vera-gel.jpg" alt="Aloe Vera Gel" class="cart-item-img">
+                    <div class="cart-item-details">
+                        <h2>Aloe Vera Gel</h2>
+                        <p>Quantity: <input type="number" min="1" value="2" aria-label="Quantity for Aloe Vera Gel"></p>
+                        <p class="price">$20</p>
+                        <button class="remove-btn" aria-label="Remove Aloe Vera Gel from cart">Remove</button>
+                    </div>
+                </article>
+                <!-- If cart is empty, show a message -->
+                <div id="empty-cart-message" style="display:none;">
+                    <p>Your cart is empty. <a href="products.html">Start shopping!</a></p>
+                </div>
+            </div>
+            <div class="cart-actions">
+                <button id="back-shopping-btn" class="primary-btn" onclick="location.href='products.html'" aria-label="Return to Products">Back to Shopping</button>
+                <button id="checkout-btn" class="primary-btn" aria-label="Proceed to Checkout">Checkout</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <section class="footer-content">
+            <p>&copy; 2025 Depilasikusa. All rights reserved.</p>
+            <nav aria-label="Footer navigation">
+                <ul class="footer-links">
+                    <li><a href="privacy.html" title="Privacy Policy">Privacy Policy</a></li>
+                    <li><a href="terms.html" title="Terms of Service">Terms</a></li>
+                    <li><a href="contact.html" title="Contact Support">Support</a></li>
+                </ul>
+            </nav>
+        </section>
+    </footer>
+    <script src="cart.js"></script>
+    <script>
+        // Example empty cart state toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const cartItems = document.querySelectorAll('.cart-item');
+            const emptyMessage = document.getElementById('empty-cart-message');
+            if (cartItems.length === 0) {
+                emptyMessage.style.display = 'block';
+            }
+        });
+    </script>
 </body>
 </html>
